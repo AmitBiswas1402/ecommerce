@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { UserPlus, Mail, Lock, User, ArrowRight, Loader } from "lucide-react";
-// import { useUserStore } from "../stores/useUserStore";
+import { useUserStore } from "../stores/useUserStore";
 import { motion } from "framer-motion";
 
 const SignUpPage = () => {
@@ -12,12 +12,12 @@ const SignUpPage = () => {
 		confirmPassword: "",
 	});
 
-	// const { signup, loading } = useUserStore();
-  const loading = false;
+	const { signup, loading } = useUserStore();
+//   const loading = false;
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// signup(formData);
+		signup(formData);
 	};
 
 	return (
