@@ -1,11 +1,10 @@
-import { ShoppingCart, UserPlus, LogIn, LogOut, Lock } from "lucide-react";
+import { ShoppingCart, UserPlus, LogIn, LogOut, Lock, House } from "lucide-react";
 import { Link } from "react-router";
 import { useUserStore } from "../stores/useUserStore";
 
 const Navbar = () => {
     const { user, logout } = useUserStore();
     const isAdmin = user?.role === "admin";
-    // const { cart } = useCartStore();
 
   return (
     <header className="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-md shadow-lg z-40 transition-all duration-300 border-b border-emerald-800">
@@ -24,7 +23,9 @@ const Navbar = () => {
               className="text-gray-300 hover:text-emerald-400 transition duration-300
 					 ease-in-out"
             >
-              Home
+              <div className="flex">
+                <House size={20} className="mr-1.5 mt-1" />Home
+              </div>
             </Link>
             {user && (
               <Link
