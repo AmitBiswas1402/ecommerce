@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router"
 import HomePage from "./pages/HomePage"
 import SignUpPage from "./pages/SignUpPage"
 import LoginPage from "./pages/LoginPage"
+import LoadingSpinner from "./components/LoadingSpinner"
 
 import Navbar from "./components/Navbar"
 import { Toaster } from "react-hot-toast"
@@ -15,6 +16,8 @@ function App() {
   useEffect(() => {
 		checkAuth();
 	}, [checkAuth]);
+
+  if (checkingAuth) return <LoadingSpinner />;
 
   return (
     <div className="min-h-screen bg-gray-900 text-white relative overflow-hidden">
