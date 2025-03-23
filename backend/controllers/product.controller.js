@@ -53,6 +53,7 @@ export const createProduct = async (req, res) => {
       category,
     });
 
+    await product.save();
     res.status(201).json(product);
   } catch (error) {
     console.log("Error is createProduct", error);
