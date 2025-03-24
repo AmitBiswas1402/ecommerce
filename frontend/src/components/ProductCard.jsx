@@ -7,14 +7,9 @@ const ProductCard = ({ product }) => {
       <div className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl">
         <img
           className="object-cover w-full h-full"
-          src={product.image || "https://via.placeholder.com/300"}
+          src={product.image}
           alt="product image"
-          onError={(e) => {
-            console.log("Failed to load image:", product.image);
-            e.target.src = "https://via.placeholder.com/300"; // Temporary placeholder
-          }}
         />
-        <div className="absolute inset-0 bg-black bg-opacity-20" />
       </div>
 
       <div className="mt-4 px-5 pb-5">
@@ -30,8 +25,7 @@ const ProductCard = ({ product }) => {
         </div>
         <button
           className="flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-2.5 text-center text-sm font-medium
-					 text-white hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300"
-          // onClick={handleAddToCart}
+           text-white hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300"
         >
           <ShoppingCart size={22} className="mr-2" />
           Add to cart
